@@ -45,3 +45,12 @@ Pour voir aussi combien de fichier est ouvert par ce process :
 
 lsof -p idprocess et il va afficher tous les fichiers ouvert par ce process.
  
+Sujet 1: j'ai crée un password less authentification entre deux machines linux mais il me demande toujours le mot de passe a chaque connexion ssh si la machine distante
+
+Que dois je faire:
+1-ce qu'il faut vérifier les permissions du répertoire .ssh , il doit etre a chmod 700, .
+2-
+
+
+Question 8: ecris une commande qui cherche des fichiers avec extension ".sh" et contient la chaine "scale" a l'intérieur de ce fichier.
+Find ./ -name ".sh" | xargs grep "scale" => cherche moi dans le repertoire courant les fichiers .sh et trouve moi le mot scale dans ces fichiers.
