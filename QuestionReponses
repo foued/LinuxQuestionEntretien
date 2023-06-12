@@ -1,0 +1,15 @@
+Question 1
+C'est quoi la raison pourqu'un user n'as pas le droit de du ssh a une machine distante ?
+tu peux vérifier le fichier /etc/ssh/sshd_config et vous avez plusieures parametres a l'intérieur
+si le parametre :
+#port 22 existe ou non
+#PublicKeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_Keys ( c'est le fichier qui contient les clés )
+PasswordAuthentication no/yes
+DenyUsers user1 (exemple)
+AllowsUsers devops (exemple)
+2- il faut aller a /var/empty/sshd et vérifier les permissions sur ce repertoires 
+
+Question2: c'est quoi la différence entre systemctl start et systemctl enable
+enable un service permet de starter ton service meme apres un reboot de machine.
+start service permet de starter ton service une fois.
