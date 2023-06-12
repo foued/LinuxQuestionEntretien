@@ -13,3 +13,35 @@ AllowsUsers devops (exemple)
 Question2: c'est quoi la différence entre systemctl start et systemctl enable
 enable un service permet de starter ton service meme apres un reboot de machine.
 start service permet de starter ton service une fois.
+
+Question 3:
+
+Comment on débug un service si il echoue pendant le démarrage.
+On va vérifier son status : systemctl monservice status.
+journal -xeu monservice qui remonte les logs de mon service.
+
+Question 4: Imaginons que vous avez un incident sur un serveur de production qu'il vous dit que un fs est a full, comment vous allez débugguer ?
+
+df -h premiére commande qui remonte les fs 
+du -sh /Pathrepertoire/ pour voir tous les sous repertoires ,fichiers les plus volumineux sous ce path
+
+Question4: pourquoi on peut pas créer un fichier dans un repertoire spécific
+il suffit de vérifier les permissions.
+
+Question 5: c'est quoi les inodes : c'est des fichiers de metadonnées ( chaque fichier a un inodes)
+df -ih  :remonte les inodes.
+
+Question 6 : c'est quoi la différence entre soft link et hard link
+
+Sous linux nous avons deux types de link 
+
+Question 7 : c'est quoi les process zombie?
+
+Question 8: Imaginons que vous avez une alert qu'un process est running depuis 2 heures , comment on va réagir ?
+Vous allez taper la commande top pour voir vos process et vous pouvez voir quel process le plus gourmand.
+Apres par exemple: ps aux | grep java --> il va afficher tous les process java qui tourne , avec leur caractéristqiue ( la commande exécuter de ce process, sur quel port il tourne, depuis quand il tourne)
+
+Pour voir aussi combien de fichier est ouvert par ce process :
+
+lsof -p idprocess et il va afficher tous les fichiers ouvert par ce process.
+ 
