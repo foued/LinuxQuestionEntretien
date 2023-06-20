@@ -54,3 +54,35 @@ Que dois je faire:
 
 Question 8: ecris une commande qui cherche des fichiers avec extension ".sh" et contient la chaine "scale" a l'intérieur de ce fichier.
 Find ./ -name ".sh" | xargs grep "scale" => cherche moi dans le repertoire courant les fichiers .sh et trouve moi le mot scale dans ces fichiers.
+
+Question 9:
+echo $SHELL ==> SHELL est une variable d'environement et le $ avant pour afficher la valeur de cette variable d'environement.
+Comment est identifié ma machine sur le réseau : hostname est le nom de mon serveur ma VM.
+
+Question 1: how Passwordless Authentification between linux servers 
+
+exemple une machine Master et une autre Slave.
+
+ssh root@ip/hostname 
+
+il va nous demander un password a chaque fois.
+
+Comment faire ?
+
+Nous avons sous chaque server un fichier   .ssh/authorized_keys
+
+On va génerer une paire de  clé public/privé avec la commande :
+
+ssh-keygen -t rsa ==>il va génerer une paire de clé public et privé sous notre machine 
+apres il va demandé une passphrase : taper entrer
+
+toujours entrer
+
+3- ls le repertoire ou vous avez génere vos clés (privé et public)
+
+vous pouvez ainsi copié le contenu de la clé public et la collé dans le serveur cible dans le fichier authorized_keys
+
+Maintenant Imaginons que nous avons plusieures servers.
+
+*****************************************************************CommandeDevops************************************************************
+
