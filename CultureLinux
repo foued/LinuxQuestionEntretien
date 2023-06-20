@@ -1,0 +1,191 @@
+Les liens symboliques en linux sont des raccourcis ,comme en windows quand vous créez un raccourci
+
+les repertoires sous Linux:
+
+BIN: Fichiers exécutables communs a tous les utilisateurs
+
+par exemple : la commande ls ou uptime ou autre , cete commande c'est un binaire et qui est un fichier qui est stocké dans le répertoire /bin ou /usr/bin
+
+qui est propre a un user .
+
+/ROOT dossier personnel du root.
+
+/home c'est le repertoire personnels des users.
+
+/VAR il contient les fichiers variables tout le temps , les fichiers de cache,logs,journaux comme var/logs
+
+df - h il permet d'afficher les partitions
+
+les liens symboliques il commence par l , on peut créer un lien et le supprimer.
+
+tree affiche le repertoire courant en mode tree,affichage sous forme d'arbre
+
+which commande : exemple which ls ==> il va afficher le chemin de la commande : exemple /usr/bin/cat
+
+*******Recherche de fichiers
+
+find : fonctionalité de base de linux et propose des filtres
+
+locate
+
+grep
+
+find . -iname "Fichier" ==> cette commande permet de chercher un fichier dans le repertoire courant avec l'option . et i pour chercher les miniscules et majuscules.
+
+find . -name "fichier1" -exec chmod 640 {} ;
+
+cete commande va chercher le fichier1 et executer la commande chmod 640
+
+find . -name "fichier1" -exec rm -rf {} ;
+
+Cette commande va le chercher et le supprimer
+
+find c'est un vrai couteau suiss
+
+locate ficher
+
+Je veux chercher un texte dans fichier
+
+exemple chercher error dans des fichiers logs.
+
+grep "error" * /pathlog
+
+Extraction et filtrage des données********
+
+grep -i "error" /pathlog |sort|wc -l :affiche le nombre de ligne uniques contenant une erreur dans le fichier de logs
+
+********Lancement des programmes
+
+Systemd est un gestionnaire de services /daemon: qui lance des services qui s'executent comme taches de fond 24/24 et nous répondent comme un serveur web
+
+le service ssh aussi
+
+nohup suivi de votre commande le service/job continue de tourner malgré l'arret de la console.
+
+******crontab
+
+C'est un utilitaire trés utilisé: il existe pour chaque utilisateur une crontab et une crontab systeme (root)
+
+crontab -e il va m'ouvrir ma crontab et je peux le remplir avec mes commandes
+
+crontab -l ==>permet d'afficher ma crontab
+
+tester vos commandes syntaxiquement avec le site crontab.guru
+
+Mais attention si nous allons utiliser beaucoup le crontab avec des taches ==> il ya un risque que le systeme devient moins perfermans
+
+il y a un vrai risque sur la perfermance de notre serveur
+
+******Archivages et compression
+
+Dans cette partie on va parler de l'archivage te compression :
+
+L'archivage créer une archive : c'est prendre plusieures fichiers et les mettres en un seule fichier
+
+C'est comme un classeur et on va mettre plusieures feuilles dans ce classeur ca sert pour l'envoie a distance
+
+Sous linux pour faire une archive c'est la commande:
+
+tar -cvf monarchive.tar mondossieraarchiver/
+
+La compression sous linux se fait sur les fichiers nous avons archivés.
+
+Compression : Réduire la taille d’un fichier par algorithme de compression.==> gzip -k monarchive.tar) Archivage : Placer un ensemble de fichiers et/ou de dossiers dans un seul fichier. tar -cvf monarchive.tar mondossieraarchiver/ ==>( archive.tar)
+
+L'objectif de l'archivage et la compression pour l'envoie réseau.
+
+Configuration IP*****
+
+une adresse ip : cette adresse identifie votre machine sur le réseau ou il est connecté.
+
+Un masque de sous-réseau: permets de connaitre le réseau ou vous etes connecté.(il regroupe plusieures machines qui communiques entre eux).
+
+==> on peut avoir des adresses ip similaires mais pas dans le meme sous réseau .
+
+On peut avoir deux numéro de télephone identiques mais pas dans le meme pays ( exemple 033 0607080910) et - 0049 0607080910)
+
+Une passerelle par défaut (gateway) : pour communiquer avec des machines hors de mon réseau.
+
+Des serveurs dns: pour la résolution des noms de domaine, c'est comme l'agenda ou le contact dans notre télephone
+
+Transfert de Data*********
+
+Dans cette partie on va voir le transit de la data
+
+Il existe plusieures methodes de transfert de data:
+
+scp: transfert de data via ssh.(Dowload et upload)
+
+winscp: client graphique pour faire du scp.
+
+ftp/sftp: transfert avec serveur ftp.
+
+rsync: pour faire de la synchronisation de fichiers ( il existe sur la plupart des distribution linux)
+
+il permet de synchroniser deux dossiers locaux ou sur deux serveurs distants ,il fait de la sauvegarde incrémentielle
+
+c'est a dire il va ajouter le delta.
+
+********************Analyse de Traffic et flux
+
+les commandes host (ip /nom machine) et nslookup (ip /nom machine) permettent de requeter le dns pour avoir l'equivalent ip, nom machine et inversement.
+
+netstat permet d'analyser les flux réseaux.
+
+*************Filtrage des flux: IPTables IPTABLES:C'est un utilitaire existe sur toutes les distribution linux.
+
+C'est un pare-feu natif linux.
+
+Permets de filtrer le traffic par , ip et par port.
+
+C'est pas un antivirus , le but est juste , de limiter les programmes pouvant communiquer avec votre machine.
+
+Le principe est de tout bloquer par défaut et autoriser uniquement le traffic identifié ( systeme close to open)
+
+Pour les flux il existe 3 types:
+
+Input : qui sont entrant vers la machine (avec persistence).
+
+Output: qui sont sortants depuis notre machine:
+
+Forwad: les flux qui transitent par nos machines.
+
+Syntaxe: iptable-A chain) -p (protocle) --dport (port) -j (décision)
+
+chaine=Input/Output/Forwad protocole =tcp/udp/icmp/ldap/......
+
+port=le port a configurer (22,80,8080,....)
+
+décision=ACCEPT/REJECT/DROP
+
+Quelques Régles IPTABLES exemple:
+
+Par défaut , refuser toutes les connexions:
+
+iptables -P INPUT DROP.
+
+Par défaut ,accepter toutes les connexions
+
+iptables -A INPUT ACCEPT.
+
+Autorise les connexions déja établies:
+
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+*******************Disque Dur et Partitionnement
+
+**********************Les expressions régulieres Linux Son but est d'accélerer et automatiser des recherches lorsqu'on a des chaines de caractéres spécifiques a trouver parmi un flux de caractére
+
+Type de données a chercher sont multiples: Fichiers partie de mot, Adresse ip, url,date, email,.....
+
+AWK est une commande Linux puissante et langage de script à usage général conçu pour le traitement de texte avancé et flux. Il est principalement utilisé comme outil de rapport et d’analyse.
+
+Quelques Exemple d'utilisation:
+
+cat monfichier.txt|awk '{print $3}'
+
+Exemple pour extraire des données d'un fichier texte:
+
+awk '{print $3}' employes.txt ==> il va afficher 3 eme colone de ton fichier.
+
+awk '{print $2 $3}' employes.txt ==> il va afficher 2 eme et 3 eme colone .
