@@ -1,0 +1,18 @@
+1-C'est quoi le numéro du port ssh :Par défaut le numéro du port est 22
+2-Ou se trouve le fichier de conf de ssh :vim /etc/ssh/sshd_config
+3-systemctl reload sshd a faire si vous toucher a la conf ssh.
+4-Comment bloquer le ssh a certains users:
+vim /etc/sshd_config 
+ajouter cette ligne :DenyUsers tonuser.
+systemctl reload sshd
+
+5- C'est quoi le type de fichiers sous linux ( .files,d directory,l link qui pointe sur un fichier).
+6- Comment vérifier les ports ouverts sur un serveur
+7-Comment vérifier les ports ouverts sur un serveur distant sans se connecter.
+
+8- C'est quoi la différence entre IP publique et ip privé.
+IP publique te permet d'accéder a internet comme IP d'un loadbalancer, ip privé c'est une ip au niveau d'un LAN ( une VM, rooter, ...)
+
+
+
+
