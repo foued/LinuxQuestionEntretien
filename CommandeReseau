@@ -111,7 +111,10 @@ Nom :    livebox.home
 Address:  192.168.1.1
 
 
-***********************************************************************Netstat*************************************
+***********************************************************************Telnet*************************************
 
-Cette commande permet de lister les ports ouvert sur ma machine ou bien une machine distante.
+Cette commande permet de tester une connexion sur une machine distante.
+
+exemple:
+telnet IP/domaine name 22 ==> si non se connecte c'est que le port est ouvert, sinon il est fermé.
 
