@@ -56,7 +56,7 @@ tant que le temps est petit ca montre que la connectivité est parfaite.
 
 ***********************************************************Tracert/Traceroute*******************************************
 
-C'est une commande qui montre le chemin complet du réseau a joindre jusqua arriver au dsn de google dérniére ligne.
+C'est une commande qui montre le chemin complet du réseau a joindre jusqua arriver au dns de google derniére ligne.
 
 Elle trace les routeurs traversés entre la machine source , vers la machine cible.
 
@@ -110,4 +110,8 @@ Address:  2a01:cb08:a49:8500:5efa:25ff:fe60:8810
 Nom :    livebox.home
 Address:  192.168.1.1
 
+
+***********************************************************************Netstat*************************************
+
+Cette commande permet de lister les ports ouvert sur ma machine ou bien une machine distante.
 
