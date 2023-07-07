@@ -61,7 +61,7 @@ C'est une commande qui montre le chemin complet du réseau a joindre jusqua arri
 Elle trace les routeurs traversés entre la machine source , vers la machine cible.
 
 comme on voit sur la line 1 je viens de sortir de ma passarelle qui est ma boxe,en passant par le réseau orange jusqua arriver a l'adresse de google.
-
+Je tape la commande avec IP cible ou non du domaine www.google.com
 C:\Users\33644>tracert 8.8.8.8
 
 Détermination de l’itinéraire vers dns.google [8.8.8.8]
@@ -83,5 +83,31 @@ Itinéraire déterminé.
 C:\Users\33644>
 
 ********************************************************************nslookup**************************************************
+Quand on utilise cette commande , pour determiner si nous avons un soucis sur notre serveur DNS, il permet de trouver le nom dns d'une adresse IP ou vis versa.
+
+Si on trouve pas une correspondante c'est que nous avons un soucis.
+
+>nslookup www.google.com
+Serveur :   livebox.home
+Address:  2a01:cb08:a49:8500:5efa:25ff:fe60:8810
+
+Réponse ne faisant pas autorité :
+Nom :    www.google.com
+Addresses:  2a00:1450:4007:80d::2004
+          216.58.215.36
+
+Dans cette commande il a renvoyé l'adresse ipv6 et ipv4 de google qui sont la ligne 96 et 97 
+==> ça veut dire que pas de soucis sur l'adresse cible dans nslookup
+
+Autre Exemple :
+
+Je vais faire un nslookup de l'IP de ma passarelle et on vois bien sur la ligne 110 il me renvoie ma livebox qui est ma passarelle ou routeur
+
+nslookup 192.168.1.1
+Serveur :   livebox.home
+Address:  2a01:cb08:a49:8500:5efa:25ff:fe60:8810
+
+Nom :    livebox.home
+Address:  192.168.1.1
 
 
