@@ -1,0 +1,87 @@
+**************************************IPConfig/ifcongig***************************************
+Cette commande remonte les informations la liste les cartes réseaux sur notre machine, les détails de notre adresse ip sois en version 4 ou en version 6
+
+la passarelle, et si la carte est connecté ou non.
+C:\Users\33644>ipconfig
+
+Configuration IP de Windows
+
+
+Carte réseau sans fil Connexion au réseau local* 3 :
+
+   Statut du média. . . . . . . . . . . . : Média déconnecté
+   Suffixe DNS propre à la connexion. . . :
+
+Carte réseau sans fil Connexion au réseau local* 4 :
+
+   Statut du média. . . . . . . . . . . . : Média déconnecté
+   Suffixe DNS propre à la connexion. . . :
+
+Carte réseau sans fil Wi-Fi :
+
+   Suffixe DNS propre à la connexion. . . : home
+   Adresse IPv6. . . . . . . . . . . . . .: 2a01:cb08:a49:8500:b363:d0cc:52e3:485c
+   Adresse IPv6 temporaire . . . . . . . .: 2a01:cb08:a49:8500:30e7:26e7:b8b3:1415
+   Adresse IPv6 de liaison locale. . . . .: fe80::c648:5b06:c745:3af%15
+   Adresse IPv4. . . . . . . . . . . . . .: 192.168.1.19
+   Masque de sous-réseau. . . . . . . . . : 255.255.255.0
+   Passerelle par défaut. . . . . . . . . : fe80::5efa:25ff:fe60:8810%15
+                                       192.168.1.1
+
+Carte Ethernet Connexion réseau Bluetooth :
+
+   Statut du média. . . . . . . . . . . . : Média déconnecté
+   Suffixe DNS propre à la connexion. . . :
+
+
+***************************************************************Ping*********************************************
+
+C'est une commande qui vérifie la joignabilité d'un réseau , s'il est joignable ou non.
+Dans l'exemple ci dessous , on a fait un ping a google sur son adresse 8.8.8.8
+C:\Users\33644>ping 8.8.8.8
+
+Envoi d’une requête 'Ping'  8.8.8.8 avec 32 octets de données :
+Réponse de 8.8.8.8 : octets=32 temps=6 ms TTL=114
+Réponse de 8.8.8.8 : octets=32 temps=10 ms TTL=114
+Réponse de 8.8.8.8 : octets=32 temps=6 ms TTL=114
+Réponse de 8.8.8.8 : octets=32 temps=7 ms TTL=114
+
+Statistiques Ping pour 8.8.8.8:
+    Paquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0%),
+Durée approximative des boucles en millisecondes :
+    Minimum = 6ms, Maximum = 10ms, Moyenne = 7ms
+
+Nous avons un paramétre qui est temps , c'est temps de latence pour se connecter a la cible.
+tant que le temps est petit ca montre que la connectivité est parfaite.
+
+***********************************************************Tracert/Traceroute*******************************************
+
+C'est une commande qui montre le chemin complet du réseau a joindre jusqua arriver au dsn de google dérniére ligne.
+
+Elle trace les routeurs traversés entre la machine source , vers la machine cible.
+
+comme on voit sur la line 1 je viens de sortir de ma passarelle qui est ma boxe,en passant par le réseau orange jusqua arriver a l'adresse de google.
+
+C:\Users\33644>tracert 8.8.8.8
+
+Détermination de l’itinéraire vers dns.google [8.8.8.8]
+avec un maximum de 30 sauts :
+
+  1     4 ms     4 ms     5 ms  livebox.home [192.168.1.1]
+  2     8 ms     5 ms     5 ms  80.10.253.29
+  3     *        *        *     Délai d’attente de la demande dépassé.
+  4     6 ms     7 ms     5 ms  ae91-0.ncidf304.rbci.orange.net [193.253.82.102]
+  5     6 ms     6 ms     7 ms  ae42-0.niidf302.rbci.orange.net [193.252.159.153]
+  6     6 ms     6 ms     9 ms  193.252.137.78
+  7     6 ms     6 ms    14 ms  209.85.148.16
+  8     7 ms     7 ms     7 ms  216.239.40.79
+  9     7 ms     6 ms     7 ms  108.170.235.15
+ 10     6 ms     6 ms     7 ms  dns.google [8.8.8.8]
+
+Itinéraire déterminé.
+
+C:\Users\33644>
+
+********************************************************************nslookup**************************************************
+
+
