@@ -13,6 +13,8 @@ netstat -tulpn | grep LISTEN
 telnet [IP or Hostname] [PortNumber]
 8- C'est quoi la différence entre IP publique et ip privé.
 IP publique te permet d'accéder a internet comme IP d'un loadbalancer, ip privé c'est une ip au niveau d'un LAN ( une VM, rooter, ...)
+9-lister les fs les plus vulumineux linux
+df -h
 
 
 
