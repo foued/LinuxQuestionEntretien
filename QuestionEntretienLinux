@@ -3,7 +3,7 @@
 3-systemctl reload sshd a faire si vous toucher a la conf ssh.
 4-Comment bloquer le ssh a certains users:
 vim /etc/sshd_config 
-ajouter cette ligne :DenyUsers tonuser.
+ajouter cette ligne :DenyUsers VotreUser.
 systemctl reload sshd
 
 5- C'est quoi le type de fichiers sous linux ( .files,d directory,l link qui pointe sur un fichier).
