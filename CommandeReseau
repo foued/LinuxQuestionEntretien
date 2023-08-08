@@ -1,5 +1,5 @@
-**************************************IPConfig/ifcongig***************************************
-Cette commande remonte les informations la liste les cartes réseaux sur notre machine, les détails de notre adresse ip sois en version 4 ou en version 6
+**************************************IPConfig/ifconfig***************************************
+Cette commande remonte les informations la liste des cartes réseaux sur notre machine, les détails de notre adresse ip sois en version 4 ou en version 6
 
 la passarelle, et si la carte est connecté ou non.
 C:\Users\33644>ipconfig
