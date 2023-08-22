@@ -1,5 +1,5 @@
 Question 1
-C'est quoi la raison pourqu'un user n'as pas le droit de du ssh a une machine distante ?
+C'est quoi la raison pourqu'un user n'as pas le droit de faire du ssh a une machine distante ?
 tu peux vérifier le fichier /etc/ssh/sshd_config et vous avez plusieures parametres a l'intérieur
 si le parametre :
 #port 22 existe ou non
@@ -25,7 +25,7 @@ Question 4: Imaginons que vous avez un incident sur un serveur de production qu'
 df -h premiére commande qui remonte les fs 
 du -sh /Pathrepertoire/ pour voir tous les sous repertoires ,fichiers les plus volumineux sous ce path
 
-Question4: pourquoi on peut pas créer un fichier dans un repertoire spécific
+Question4: pourquoi on peut pas créer un fichier dans un repertoire spécifique
 il suffit de vérifier les permissions.
 
 Question 5: c'est quoi les inodes : c'est des fichiers de metadonnées ( chaque fichier a un inodes)
