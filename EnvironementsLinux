@@ -1,0 +1,10 @@
+Dans cette partie on va voir tout ce qui est Environnement : variables, login, profile, bashrc
+Pour chaque utilisateur nous avons un environement spécifique car nous avons des utilsateurs spécifique ou systeme
+qui ont vocation a lancer des services  un apache, démarrer un serveur websphere on peut avoir un user was et qui n'as besoin de se logguer
+comme un user normal.
+Comme nous avons des paramétrages spécifiques a des utilisateurs et d'autres qui sont générales pour tout le monde.
+Tout ça s'appelle un environement de travail et qu'est ce quei comporte cet environement ?
+Il comporte des variables d'environements comme le chemin de java,python ...
+Démarrage du serveur: les presquis de démarrage, apres init, apres systemd 
+
+
