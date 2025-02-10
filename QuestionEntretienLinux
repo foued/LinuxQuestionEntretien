@@ -9,7 +9,7 @@ systemctl reload sshd
 5- C'est quoi le type de fichiers sous linux ( .files,d directory,l link qui pointe sur un fichier).
 6- Comment vérifier les ports ouverts sur un serveur
 netstat -tulpn | grep LISTEN
-7-Comment vérifier les ports ouverts sur un serveur distant sans se connecter.
+7-Comment vérifier les ports ouverts sur ton serveur distant sans se connecter.
 telnet [IP or Hostname] [PortNumber]
 8- C'est quoi la différence entre IP publique et ip privé.
 IP publique te permet d'accéder a internet comme IP d'un loadbalancer, ip privé c'est une ip au niveau d'un LAN ( une VM, rooter, ...)
